@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jeongmeen Suh | Professor of Global Commerce</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0f2044;--accent:#c8963e;--light:#f7f5f0;--white:#ffffff;
+  --gray:#6b7280;--dark:#1a1a2e;--card:#ffffff;--border:#e5e7eb;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--light);color:#1f2937}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(15,32,68,0.97);backdrop-filter:blur(10px);z-index:100;padding:0 5%}
+.nav-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;height:60px}
+.nav-logo{color:var(--white);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;text-decoration:none}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;transition:.2s}
+.nav-links a:hover{color:var(--accent)}
+
+/* HERO */
+#hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,#1a3a6e 60%,#0d1b3e 100%);display:flex;align-items:center;padding:0 5%;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-inner{max-width:1100px;margin:auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding-top:60px}
+.hero-text h1{font-family:'Playfair Display',serif;font-size:3.2rem;color:var(--white);line-height:1.2;margin-bottom:.5rem}
+.hero-text h1 span{color:var(--accent)}
+.hero-subtitle{color:rgba(255,255,255,0.75);font-size:1rem;margin-bottom:.3rem}
+.hero-affil{color:rgba(255,255,255,0.55);font-size:.9rem;margin-bottom:1.8rem}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.tag{background:rgba(200,150,62,0.15);border:1px solid rgba(200,150,62,0.4);color:var(--accent);font-size:.75rem;padding:.3rem .7rem;border-radius:20px;font-weight:500}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn-primary{background:var(--accent);color:var(--white);padding:.7rem 1.6rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:.9rem;transition:.2s}
+.btn-primary:hover{background:#b8832e}
+.btn-outline{border:1px solid rgba(255,255,255,0.4);color:var(--white);padding:.7rem 1.6rem;border-radius:4px;text-decoration:none;font-weight:500;font-size:.9rem;transition:.2s}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.hero-socials{display:flex;gap:1rem}
+.social-link{color:rgba(255,255,255,0.5);font-size:.8rem;text-decoration:none;padding:.4rem .8rem;border:1px solid rgba(255,255,255,0.15);border-radius:3px;transition:.2s}
+.social-link:hover{color:var(--accent);border-color:var(--accent)}
+.hero-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:2rem;backdrop-filter:blur(10px)}
+.hero-card .recent-label{color:var(--accent);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+.update-item{padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,0.07)}
+.update-item:last-child{border-bottom:none}
+.update-item .year{color:var(--accent);font-size:.75rem;font-weight:600;margin-bottom:.3rem}
+.update-item p{color:rgba(255,255,255,0.8);font-size:.85rem;line-height:1.5}
+.update-item a{color:rgba(200,150,62,0.9);text-decoration:none}
+.update-item a:hover{text-decoration:underline}
+
+/* SECTIONS */
+section{padding:80px 5%}
+.section-inner{max-width:1100px;margin:auto}
+.section-label{color:var(--accent);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.5rem}
+.section-title{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--navy);margin-bottom:2.5rem;padding-bottom:.8rem;border-bottom:2px solid var(--border)}
+.section-title span{border-bottom:3px solid var(--accent)}
+
+/* ABOUT */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:start}
+.about-bio{font-size:1rem;line-height:1.85;color:#374151;margin-bottom:1.5rem}
+.info-card{background:var(--light);border-radius:8px;padding:1.5rem;border-left:3px solid var(--accent)}
+.info-card h4{font-weight:700;color:var(--navy);margin-bottom:1rem;font-size:.9rem;text-transform:uppercase;letter-spacing:.05em}
+.info-row{display:flex;gap:.5rem;margin-bottom:.5rem;font-size:.85rem}
+.info-row .label{color:var(--gray);min-width:70px;font-weight:500}
+.info-row .val{color:#1f2937}
+
+/* CV / TIMELINE */
+#cv{background:var(--light)}
+.cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.cv-block h3{font-size:1rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.06em;margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.timeline-item{display:flex;gap:1rem;margin-bottom:1.2rem}
+.tl-year{min-width:100px;font-size:.8rem;color:var(--accent);font-weight:600;padding-top:.2rem}
+.tl-body .tl-title{font-size:.9rem;font-weight:600;color:#1f2937}
+.tl-body .tl-sub{font-size:.82rem;color:var(--gray);margin-top:.1rem}
+.fields-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.field-tag{background:var(--navy);color:var(--white);font-size:.75rem;padding:.3rem .7rem;border-radius:3px}
+
+/* RESEARCH */
+#research{background:var(--white)}
+.pub-filters{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.filter-btn{padding:.4rem 1rem;border-radius:20px;border:1px solid var(--border);background:none;cursor:pointer;font-size:.8rem;font-family:inherit;transition:.2s;color:#374151}
+.filter-btn.active,.filter-btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.pub-list{list-style:none}
+.pub-item{padding:1rem 0;border-bottom:1px solid var(--border);display:flex;gap:1rem;align-items:start}
+.pub-num{color:var(--accent);font-weight:700;font-size:.9rem;min-width:24px;padding-top:.1rem}
+.pub-content .pub-title{font-size:.9rem;font-weight:600;color:#1f2937;line-height:1.5;margin-bottom:.3rem}
+.pub-content .pub-meta{font-size:.8rem;color:var(--gray)}
+.pub-content .pub-meta em{color:var(--navy);font-style:normal;font-weight:500}
+.pub-badge{display:inline-block;font-size:.7rem;padding:.15rem .5rem;border-radius:3px;margin-right:.4rem;font-weight:600}
+.badge-ssci{background:#dbeafe;color:#1e40af}
+.badge-kci{background:#dcfce7;color:#166534}
+.badge-wp{background:#fef3c7;color:#92400e}
+.pub-link{color:var(--accent);font-size:.78rem;text-decoration:none;margin-top:.3rem;display:inline-block}
+.pub-link:hover{text-decoration:underline}
+.hidden{display:none}
+
+/* PROJECTS */
+#projects{background:var(--light)}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.proj-card{background:var(--white);border-radius:10px;overflow:hidden;border:1px solid var(--border);transition:.2s}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.proj-thumb{height:140px;background:linear-gradient(135deg,var(--navy),#2a4a8e);display:flex;align-items:center;justify-content:center}
+.proj-thumb .icon{font-size:2.5rem}
+.proj-body{padding:1.2rem}
+.proj-body h3{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:.5rem;line-height:1.4}
+.proj-body p{font-size:.8rem;color:var(--gray);line-height:1.5}
+.proj-funder{font-size:.75rem;color:var(--accent);margin-top:.6rem;font-weight:500}
+
+/* CONTACT */
+#contact{background:var(--navy)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.contact-info .section-title{color:var(--white)}
+.contact-info .section-title span{border-bottom-color:var(--accent)}
+.contact-detail{display:flex;gap:1rem;margin-bottom:1.2rem;align-items:start}
+.contact-icon{font-size:1.2rem;min-width:30px;margin-top:.1rem}
+.contact-text{color:rgba(255,255,255,0.75);font-size:.9rem;line-height:1.6}
+.contact-text strong{color:var(--white);display:block;margin-bottom:.2rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+.contact-form{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:2rem}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;color:rgba(255,255,255,0.7);font-size:.8rem;font-weight:500;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.05em}
+.form-group input,.form-group textarea,.form-group select{width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:.6rem .8rem;color:var(--white);font-family:inherit;font-size:.9rem;outline:none;transition:.2s}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent)}
+.form-group textarea{height:100px;resize:vertical}
+.form-group select option{background:var(--navy)}
+.submit-btn{width:100%;background:var(--accent);color:var(--white);border:none;padding:.8rem;border-radius:4px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s}
+.submit-btn:hover{background:#b8832e}
+
+/* FOOTER */
+footer{background:#080f1f;padding:1.5rem 5%;text-align:center;color:rgba(255,255,255,0.3);font-size:.8rem}
+
+/* SCROLL ANIMATION */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+@media(max-width:768px){
+  .hero-inner,.about-grid,.cv-grid,.contact-grid,.proj-grid{grid-template-columns:1fr}
+  .hero-text h1{font-size:2.2rem}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">Jeongmeen <span>Suh</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text fade-in">
+      <p style="color:var(--accent);font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.8rem">Professor of Global Commerce</p>
+      <h1>Jeongmeen<br><span>Suh</span> <span style="font-family:serif;font-weight:400;font-size:1.8rem">서정민</span></h1>
+      <p class="hero-subtitle">숭실대학교 글로벌통상학과</p>
+      <p class="hero-affil">Soongsil University · Seoul, Korea</p>
+      <div class="hero-tags">
+        <span class="tag">Trade Policy</span>
+        <span class="tag">Text Mining</span>
+        <span class="tag">WTO</span>
+        <span class="tag">Digital Trade</span>
+        <span class="tag">Trade &amp; Security</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#cv" class="btn-primary">View CV</a>
+        <a href="#research" class="btn-outline">Publications</a>
+      </div>
+      <div class="hero-socials">
+        <a class="social-link" href="https://scholar.google.com/citations?user=dm5WSg4AAAAJ&hl=ko" target="_blank">Google Scholar</a>
+        <a class="social-link" href="mailto:jsuh@ssu.ac.kr">Email</a>
+        <a class="social-link" href="https://www.kosti.or.kr/main" target="_blank">KOSTI</a>
+      </div>
+    </div>
+    <div class="hero-card fade-in">
+      <p class="recent-label">⚡ Recent Updates</p>
+      <div class="update-item">
+        <p class="year">2025 · World Trade Review</p>
+        <p>"Shifting Dynamics in WTO Ministerial Statements: A Textual Analysis of Member Engagement, 1996–2024" <a href="https://www.cambridge.org/core/journals/world-trade-review/article/abs/shifting-dynamics-in-wto-ministerial-statements-a-textual-analysis-of-member-engagement-19962024/A8D1AD303F593F70A39687651024DCCC" target="_blank">[link]</a></p>
+      </div>
+      <div class="update-item">
+        <p class="year">2024 · Position</p>
+        <p>President, Korea Security Agency of Trade and Industry (<a href="https://www.kosti.or.kr/main" target="_blank">KOSTI</a>)</p>
+      </div>
+      <div class="update-item">
+        <p class="year">2023 · Book</p>
+        <p><em>A Brief History of Korean Trade Policy</em> published <a href="https://product.kyobobook.co.kr/detail/S000211608409" target="_blank">[link]</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About</p>
+    <h2 class="section-title"><span>Who I Am</span></h2>
+    <div class="about-grid fade-in">
+      <div>
+        <p class="about-bio">I am a Professor of Global Commerce at <strong>Soongsil University</strong>, Seoul. I am currently on leave and serve as <strong>President of the Korea Security Agency of Trade and Industry (KOSTI)</strong>. Previously, I served as head of the WTO team at KIEP and as an <strong>Assistant Secretary in the Office of the President of the Republic of Korea</strong>, where I was responsible for trade policy.</p>
+        <p class="about-bio">My research lies at the intersection of <strong>international economics and trade policy</strong>. I am particularly interested in applying quantitative and text-mining methods to analyze trade-related international agreements, with recent work focusing on WTO documents, digital trade regulation, trade &amp; security, and the history of Korean trade policy.</p>
+        <p class="about-bio">Email: <a href="mailto:jsuh@ssu.ac.kr" style="color:var(--accent)">jsuh at ssu.ac.kr</a></p>
+      </div>
+      <div>
+        <div class="info-card">
+          <h4>Fields of Interest</h4>
+          <div class="fields-list">
+            <span class="field-tag">International Trade Theory</span>
+            <span class="field-tag">Trade &amp; Security</span>
+            <span class="field-tag">Trade &amp; Environment</span>
+            <span class="field-tag">Digital Trade</span>
+            <span class="field-tag">Text Mining</span>
+            <span class="field-tag">Korean Trade Policy</span>
+          </div>
+        </div>
+        <br/>
+        <div class="info-card">
+          <h4>Contact</h4>
+          <div class="info-row"><span class="label">Email</span><span class="val">jsuh@ssu.ac.kr</span></div>
+          <div class="info-row"><span class="label">Phone</span><span class="val">+82 2 820 0574</span></div>
+          <div class="info-row"><span class="label">Office</span><span class="val">369 Sangdo-Ro, Dongjak-Gu, Seoul 06978</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CV -->
+<section id="cv">
+  <div class="section-inner">
+    <p class="section-label">Curriculum Vitae</p>
+    <h2 class="section-title"><span>Education &amp; Employment</span></h2>
+    <div class="cv-grid fade-in">
+      <div>
+        <div class="cv-block">
+          <h3>🎓 Education</h3>
+          <div class="timeline-item">
+            <div class="tl-year">2009</div>
+            <div class="tl-body"><div class="tl-title">Ph.D. in Economics</div><div class="tl-sub">Boston University</div></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-year">2003</div>
+            <div class="tl-body"><div class="tl-title">M.A. in Economics</div><div class="tl-sub">Seoul National University</div></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-year">2001</div>
+            <div class="tl-body"><div class="tl-title">B.A. in Sociology</div><div class="tl-sub">Korea University</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="cv-block">
+          <h3>💼 Employment</h3>
+          <div class="timeline-item">
+            <div class="tl-year">2024–</div>
+            <div class="tl-body"><div class="tl-title">President, KOSTI</div><div class="tl-sub">Korea Security Agency of Trade and Industry</div></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-year">2024–</div>
+            <div class="tl-body"><div class="tl-title">Professor</div><div class="tl-sub">Dept. of Global Commerce, Soongsil University</div></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-year">2023–24</div>
+            <div class="tl-body"><div class="tl-title">Chair, Dept. of Global Commerce</div><div class="tl-sub">Soongsil University</div></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-year">2018–24</div>
+            <div class="tl-body"><div class="tl-title">Associate Professor</div><div class="tl-sub">Dept. of Global Commerce, Soongsil University</div></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-year">2015–16</div>
+            <div class="tl-body"><div class="tl-title">Assistant Secretary for Trade</div><div class="tl-sub">Office of the President of the Republic of Korea</div></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-year">2014–18</div>
+            <div class="tl-body"><div class="tl-title">Assistant Professor</div><div class="tl-sub">Dept. of Global Commerce, Soongsil University</div></div>
+          </div>
+	<div class="timeline-item">
+            <div class="tl-year">2009–14</div>
+            <div class="tl-body"><div class="tl-title">Research Fellow / Head of WTO Team</div><div class="tl-sub">KIEP (Korea Institute for International Economic Policy)</div></div>
+          </div>        
+	</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-inner">
+    <p class="section-label">Research</p>
+    <h2 class="section-title"><span>Publications</span></h2>
+    <div class="pub-filters">
+      <button class="filter-btn active" onclick="filterPubs('all',this)">All</button>
+      <button class="filter-btn" onclick="filterPubs('ssci',this)">SSCI/SCI</button>
+      <button class="filter-btn" onclick="filterPubs('kci',this)">KCI</button>
+      <button class="filter-btn" onclick="filterPubs('wp',this)">Working Papers</button>
+    </div>
+    <ul class="pub-list fade-in" id="pubList">
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">1</span>
+        <div class="pub-content">
+          <div class="pub-title">"Shifting Dynamics in WTO Ministerial Statements: A Textual Analysis of Member Engagement, 1996–2024"</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>World Trade Review</em>, 2025</div>
+          <a class="pub-link" href="https://www.cambridge.org/core/journals/world-trade-review/article/abs/shifting-dynamics-in-wto-ministerial-statements-a-textual-analysis-of-member-engagement-19962024/A8D1AD303F593F70A39687651024DCCC" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">2</span>
+        <div class="pub-content">
+          <div class="pub-title">"On the non-discrimination principle in digital trade" (w. J.Lee &amp; J.Roh)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>World Trade Review</em>, 2023</div>
+          <a class="pub-link" href="https://www.cambridge.org/core/journals/world-trade-review/article/on-the-nondiscrimination-principles-in-digital-trade/0788EC898772EF8DEEBE2C3BD99225B0" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">3</span>
+        <div class="pub-content">
+          <div class="pub-title">"The effects of digital trade policies on digital trade" (w. J.Roh)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>World Economy</em>, 2023</div>
+          <a class="pub-link" href="https://onlinelibrary.wiley.com/doi/10.1111/twec.13407" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">4</span>
+        <div class="pub-content">
+          <div class="pub-title">"Carbon border adjustment: A unilateral solution to the multilateral problem?"</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>International Environmental Agreements</em>, 2022</div>
+          <a class="pub-link" href="https://link.springer.com/article/10.1007/s10784-022-09578-3" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">5</span>
+        <div class="pub-content">
+          <div class="pub-title">"Information Technology and Spatial Reorganization of Firms" (w. Y.Kang)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>Journal of Economics &amp; Management Strategy</em>, 2022</div>
+          <a class="pub-link" href="https://onlinelibrary.wiley.com/doi/10.1111/jems.12472" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">6</span>
+        <div class="pub-content">
+          <div class="pub-title">"Profit-Sharing Rule for Networked Microgrids based on Myerson Value in Cooperative Game" (w. S.G. Yoon)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SCI</span><em>IEEE Access</em>, 9, 2021</div>
+          <a class="pub-link" href="https://ieeexplore.ieee.org/document/9311637" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">7</span>
+        <div class="pub-content">
+          <div class="pub-title">"Maximizing Solar PV Dissemination under Differential Subsidy Policy" (w. S.G. Yoon)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SCI-E</span><em>Energies</em>, 13(11), 2020</div>
+          <a class="pub-link" href="https://www.mdpi.com/1996-1073/13/11/2763" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">8</span>
+        <div class="pub-content">
+          <div class="pub-title">"Economics of Open Source: A Dynamic Approach" (w. M. Yilmaz)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>Dynamic Games and Applications</em>, 9(1), 2019</div>
+          <a class="pub-link" href="https://link.springer.com/article/10.1007/s13235-018-0247-9" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">9</span>
+        <div class="pub-content">
+          <div class="pub-title">"Roles of Flexible Mechanisms in International Environmental Agreements" (w. M. Cho)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>Korean Economic Review</em>, 33(2), 2017</div>
+          <a class="pub-link" href="http://www.kea.ne.kr/publication/ker/article/read?id=2223" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">10</span>
+        <div class="pub-content">
+          <div class="pub-title">"The Most Favored Nation Principle: Passive Constraint or Active Commitment?" (w. S.Sim &amp; S.Nahm)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>Korean Economic Review</em>, 32(1), 2016</div>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">11</span>
+        <div class="pub-content">
+          <div class="pub-title">"Preventing Systematic Circumvention of the SCM Agreement" (w. H.Jung)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>World Trade Review</em>, 15(1), 2016</div>
+          <a class="pub-link" href="http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=10151932" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">12</span>
+        <div class="pub-content">
+          <div class="pub-title">"What Determines Small Champion's Export Performance?: Evidence from Korea firm-level data" (w. Y.G.Kim)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>Asian Economic Papers</em>, 14(2), 2015</div>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">13</span>
+        <div class="pub-content">
+          <div class="pub-title">"Joining Pre-existing International Production Networks" (w. J.D. Kim)</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>Asian Economic Papers</em>, 13(2), 2014</div>
+        </div>
+      </li>
+      <li class="pub-item" data-type="ssci">
+        <span class="pub-num">14</span>
+        <div class="pub-content">
+          <div class="pub-title">"A Theory of Optimal Quality Reports with Inertia"</div>
+          <div class="pub-meta"><span class="pub-badge badge-ssci">SSCI</span><em>The BE Journal of Economic Analysis &amp; Policy</em>, 12(1), 2012</div>
+        </div>
+      </li>
+      <!-- KCI -->
+      <li class="pub-item hidden" data-type="kci">
+        <span class="pub-num">K1</span>
+        <div class="pub-content">
+          <div class="pub-title">"The Ebb and Flow of Regional Integration Vision in Asia-Pacific"</div>
+          <div class="pub-meta"><span class="pub-badge badge-kci">KCI</span><em>East Asian Economic Review</em>, 27(4), 2023</div>
+        </div>
+      </li>
+      <li class="pub-item hidden" data-type="kci">
+        <span class="pub-num">K2</span>
+        <div class="pub-content">
+          <div class="pub-title">"What has Korea told in the WTO?: An analysis on the Ministerial Conference Statements"</div>
+          <div class="pub-meta"><span class="pub-badge badge-kci">KCI</span><em>Korea Trade Review</em>, 48(1), 2023</div>
+        </div>
+      </li>
+      <li class="pub-item hidden" data-type="kci">
+        <span class="pub-num">K3</span>
+        <div class="pub-content">
+          <div class="pub-title">"Comparative Analysis of Korea's RTA using Text Mining" (w. Y.Han &amp; J.Kim)</div>
+          <div class="pub-meta"><span class="pub-badge badge-kci">KCI</span><em>Korean Journal of International Economic Law</em>, 17(3), 2019</div>
+        </div>
+      </li>
+      <!-- WP -->
+      <li class="pub-item hidden" data-type="wp">
+        <span class="pub-num">W1</span>
+        <div class="pub-content">
+          <div class="pub-title">"Measuring Convergences and Divergences in APEC RTAs/FTAs: a text-mining approach"</div>
+          <div class="pub-meta"><span class="pub-badge badge-wp">Working Paper</span><em>KIEP APEC Study Series</em>, 20-02</div>
+          <a class="pub-link" href="http://www.kiep.go.kr/sub/view.do?bbsId=search_report&nttId=210252" target="_blank">→ View Paper</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-label">Projects</p>
+    <h2 class="section-title"><span>Research Projects</span></h2>
+    <div class="proj-grid fade-in">
+      <div class="proj-card">
+        <div class="proj-thumb"><span class="icon">🌐</span></div>
+        <div class="proj-body">
+          <h3>Trade Text as Data (1): WTO Documents</h3>
+          <p>Text-mining analysis of WTO ministerial statements and trade documents to uncover patterns in member engagement and negotiation dynamics.</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#1a5276,#2e86ab)"><span class="icon">📊</span></div>
+        <div class="proj-body">
+          <h3>Trade Text as Data (2): APEC Documents</h3>
+          <p>Measuring convergences and divergences in APEC RTAs/FTAs using text-mining approaches to analyze regional integration.</p>
+          <p class="proj-funder">Supported by: National Research Foundation of Korea (NRF)</p>
+        </div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#1e3a1e,#2d6a2d)"><span class="icon">📖</span></div>
+        <div class="proj-body">
+          <h3>Trade Text as Data (3): History of Korean Trade Policy</h3>
+          <p>Analyzing historical documents of Korean trade policy to understand the evolution of Korea's trade strategy since modernization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid fade-in">
+      <div class="contact-info">
+        <p class="section-label" style="color:var(--accent)">Contact</p>
+        <h2 class="section-title" style="color:var(--white);border-bottom-color:rgba(255,255,255,0.1)"><span style="border-bottom-color:var(--accent)">Get in Touch</span></h2>
+        <div class="contact-detail">
+          <span class="contact-icon">📧</span>
+          <div class="contact-text"><strong>Email</strong>jsuh (at) ssu.ac.kr</div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-icon">📞</span>
+          <div class="contact-text"><strong>Phone</strong>+82 2 820 0574</div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-icon">🏛️</span>
+          <div class="contact-text"><strong>Address</strong>Department of Global Commerce<br>Soongsil University<br>369 Sangdo-Ro, Dongjak-Gu<br>Seoul 06978, Republic of Korea</div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-icon">🔗</span>
+          <div class="contact-text"><strong>Links</strong>
+            <a href="https://scholar.google.com/citations?user=dm5WSg4AAAAJ&hl=ko" target="_blank" style="color:var(--accent)">Google Scholar</a> ·
+            <a href="https://gtrade.ssu.ac.kr/" target="_blank" style="color:var(--accent)">Dept. Website</a> ·
+            <a href="https://www.kosti.or.kr/main" target="_blank" style="color:var(--accent)">KOSTI</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name"/>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com"/>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select>
+              <option>Research Inquiry</option>
+              <option>Graduate Program</option>
+              <option>Collaboration</option>
+              <option>Media / Press</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Your message..."></textarea>
+          </div>
+          <button class="submit-btn">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Jeongmeen Suh · Department of Global Commerce, Soongsil University · Seoul, Korea</p>
+</footer>
+
+<script>
+// Filter publications
+function filterPubs(type, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pub-item').forEach(item=>{
+    if(type==='all'||item.dataset.type===type){
+      item.classList.remove('hidden');
+    } else {
+      item.classList.add('hidden');
+    }
+  });
+}
+
+// Scroll fade-in
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
